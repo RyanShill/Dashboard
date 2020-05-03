@@ -75,10 +75,10 @@
     </div>
         
     <div>
-        <div class="col-sm-6 mt-4">
+        <div class="col-sm-6 mt-5">
             <div class="card">
                 <div class="card-graph">
-                    <div class="card-body sm-6">
+                    <div class="card-body">
                         <Chart />
                     </div>
                 </div>
