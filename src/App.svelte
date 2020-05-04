@@ -1,6 +1,8 @@
 <script>
     import { onMount } from 'svelte';
     import Chart from './Chart.svelte';
+    import Sidebar from './Sidebar.svelte';
+    let sidebar_show = false;
     let result;
     
 
@@ -10,6 +12,7 @@
         console.log(result);
 });
 
+
 </script>
 
 <!--Header-->
@@ -17,21 +20,13 @@
     <img src="https://upload.wikimedia.org/wikipedia/commons/8/86/Ally_Bank_logo.svg" height="10%" width="5%">
 </div>
 
+<button on:click={() => sidebar_show = !sidebar_show}>≡</button>
 
+<Sidebar bind:show={sidebar_show} />
 
 <!--API Cards-->
 <div class="container">
 
-<!--Sidebar-->
-<div class="sidenav">
-    <div class="wrapper">
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#clients">Clients</a>
-        <a href="#contact">Contact</a>
-    </div>
-    </div>
-    
 <!--Active Calls Card-->
     <div class="row">
         <div class="col-sm-6">
@@ -73,18 +68,15 @@
             </div>
         </div>
     </div>
-        
+
+<!--Chart-->     
     <div>
-        <div class="col-sm-6 mt-5">
+        <div class="col sm-8 mt-5">
             <div class="card">
                 <div class="card-graph">
-                    <div class="card-body">
-                        <Chart />
-                    </div>
+                        <Chart /> 
                 </div>
             </div>
         </div>
     </div>
 </div>
-
-<!--Swaggyyyyy-->
